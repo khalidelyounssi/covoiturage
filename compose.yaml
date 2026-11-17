@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: covoiturage
+      POSTGRES_USER: cov
+      POSTGRES_PASSWORD: cov_local
+    ports:
+      - "127.0.0.1:55433:5432"
+    volumes:
+      - covoiturage_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cov -d covoiturage"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+volumes:
+  covoiturage_pgdata:
