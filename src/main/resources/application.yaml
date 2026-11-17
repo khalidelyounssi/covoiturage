@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:55433/covoiturage
+    username: cov
+    password: cov_local
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
