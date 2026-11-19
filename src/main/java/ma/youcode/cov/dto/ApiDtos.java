@@ -31,4 +31,22 @@ public final class ApiDtos {
 
     public record VehiculeOut(Long id, String marque, String modele,
                               String immatriculation, String couleur, int capacite, Long conducteurId) {}
+
+    public record PointIn(@NotBlank String ville, @NotNull LocalDateTime heurePassage,
+                          @NotNull @DecimalMin("0.00") @Digits(integer = 10, fraction = 2) BigDecimal prixDepuisDepart) {}
+
+    public record PointOut(Long id, String ville, int ordre,
+                           LocalDateTime heurePassage, BigDecimal prixDepuisDepart) {}
+
+    public record TrajetIn(@NotNull @Positive Long vehiculeId,
+                           @NotNull @Min(1) Integer placesProposees, @NotNull @Size(min = 2)
+                           List<@NotNull @Valid PointIn> points) {}
+
+    public record TrajetOut(Long id, Long conducteurId, Long vehiculeId, String villeDepart,
+                            String villeArrivee, LocalDateTime dateDepart, int placesProposees, int placesRestantes,
+                            StatutTrajet statut, List<PointOut> points) {}
+
+    public record RechercheOut(Long id, String villeMontee, String villeDescente,
+                               LocalDateTime dateDepart, LocalDateTime heureMontee, BigDecimal prixSegment,
+                               int placesRestantes) {}
 }
