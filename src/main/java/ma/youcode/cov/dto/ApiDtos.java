@@ -49,4 +49,15 @@ public final class ApiDtos {
     public record RechercheOut(Long id, String villeMontee, String villeDescente,
                                LocalDateTime dateDepart, LocalDateTime heureMontee, BigDecimal prixSegment,
                                int placesRestantes) {}
+
+    public record ReservationIn(@NotNull @Positive Long trajetId,
+                                @NotNull @Positive Long pointMonteeId, @NotNull @Positive Long pointDescenteId,
+                                @NotNull @Min(1) Integer nombrePlaces) {}
+
+    public record ReservationOut(Long id, Long passagerId, Long trajetId, Long pointMonteeId,
+                                 Long pointDescenteId, int nombrePlaces, BigDecimal montantTotal,
+                                 LocalDateTime dateReservation, StatutReservation statut) {}
+
+    public record ConfirmationOut(ReservationOut reservation, int placesRestantes,
+                                  StatutTrajet statutTrajet) {}
 }
