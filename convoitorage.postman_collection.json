@@ -1,0 +1,1004 @@
+{
+  "info": {
+    "_postman_id": "fde3dd0b-f31d-4443-af12-96e196908c0a",
+    "name": "convoitorage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53036589",
+    "_collection_link": "https://go.postman.co/collection/53036589-fde3dd0b-f31d-4443-af12-96e196908c0a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Conducteur",
+      "item": [
+        {
+          "name": "create conducteur",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"nom\": \"Hamid\",\n  \"prenom\": \"Hamid\",\n  \"email\": \"hamid@example.test\",\n  \"telephone\": \"0600000001\",\n  \"numeroPermis\": \"PERMIS-1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/conducteurs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "conducteurs"
+              ]
+            },
+            "description": "Démonstration manuelle. IDs numériques donnés en exemple : utiliser vos IDs réels. Éviter de recréer un compte existant."
+          },
+          "response": []
+        },
+        {
+          "name": "update conducteur",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n{\n  \"nom\": \"Hamid\",\n  \"prenom\": \"Hamid\",\n  \"email\": \"hamid1@example.test\",\n  \"telephone\": \"0600000001\",\n  \"numeroPermis\": \"PERMISS-1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/conducteurs/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "conducteurs",
+                "1"
+              ]
+            },
+            "description": "Démonstration manuelle. IDs numériques donnés en exemple : utiliser vos IDs réels. Éviter de recréer un compte existant."
+          },
+          "response": []
+        },
+        {
+          "name": "get conducteurs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/conducteurs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "conducteurs"
+              ]
+            },
+            "description": "200. Liste des conducteurs."
+          },
+          "response": []
+        },
+        {
+          "name": "get conducteur by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/conducteurs/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "conducteurs",
+                "1"
+              ]
+            },
+            "description": "200. Remplacer 1 par votre conducteur."
+          },
+          "response": []
+        },
+        {
+          "name": "search conducteur Hamid",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/conducteurs?recherche=Hamid",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "conducteurs"
+              ],
+              "query": [
+                {
+                  "key": "recherche",
+                  "value": "Hamid"
+                }
+              ]
+            },
+            "description": "200. Recherche par nom/prénom selon le service."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Passager",
+      "item": [
+        {
+          "name": "create passager",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Salma\",\n  \"prenom\": \"Salma\",\n  \"email\": \"salma@example.test\",\n  \"telephone\": \"0600000001\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/passagers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "passagers"
+              ]
+            },
+            "description": "Démonstration manuelle. IDs numériques donnés en exemple : utiliser vos IDs réels. Éviter de recréer un compte existant."
+          },
+          "response": []
+        },
+        {
+          "name": "get passagers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/passagers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "passagers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get passager by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/passagers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "passagers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update passager",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Passager-Id",
+                "value": "1",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Salma\",\n  \"prenom\": \"Salma\",\n  \"email\": \"salma@example.test\",\n  \"telephone\": \"0611111111\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/passagers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "passagers",
+                "1"
+              ]
+            },
+            "description": "200. ID du passager dans URL et header."
+          },
+          "response": []
+        },
+        {
+          "name": "create passager Karim",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nom\": \"Karim\",\n  \"prenom\": \"Karim\",\n  \"email\": \"karim@example.test\",\n  \"telephone\": \"0600000002\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/passagers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "passagers"
+              ]
+            },
+            "description": "201. Noter son ID pour le second booking."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vehicule",
+      "item": [
+        {
+          "name": "create vehicule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"marque\": \"Dacia\",\n  \"modele\": \"Logan\",\n  \"immatriculation\": \"12345-A-6\",\n  \"couleur\": \"Gris\",\n  \"capacite\": 4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/vehicules",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "vehicules"
+              ]
+            },
+            "description": "201. Noter ID voiture. X-Conducteur-Id = ID Hamid."
+          },
+          "response": []
+        },
+        {
+          "name": "get cars",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/vehicules",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "vehicules"
+              ]
+            },
+            "description": "Démonstration manuelle. IDs numériques donnés en exemple : utiliser vos IDs réels. Éviter de recréer un compte existant."
+          },
+          "response": []
+        },
+        {
+          "name": "get vehicule by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/vehicules/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "vehicules",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update vehicule",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"marque\": \"Dacia\",\n  \"modele\": \"Logan\",\n  \"immatriculation\": \"12345-A-6\",\n  \"couleur\": \"Noir\",\n  \"capacite\": 4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/vehicules/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "vehicules",
+                "1"
+              ]
+            },
+            "description": "200. Conserver la capacité à 4."
+          },
+          "response": []
+        },
+        {
+          "name": "delete vehicule — à faire à la fin",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/vehicules/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "vehicules",
+                "1"
+              ]
+            },
+            "description": "204 si véhicule non lié. 409 si déjà utilisé par un trajet. Ne pas supprimer avant de publier le trajet."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "trajets",
+      "item": [
+        {
+          "name": "create trajet Rabat Marrakech",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehiculeId\": 1,\n  \"placesProposees\": 3,\n  \"points\": [\n    {\n      \"ville\": \"Rabat\",\n      \"heurePassage\": \"2026-12-15T17:00:00\",\n      \"prixDepuisDepart\": 0\n    },\n    {\n      \"ville\": \"Casablanca\",\n      \"heurePassage\": \"2026-12-15T18:15:00\",\n      \"prixDepuisDepart\": 40\n    },\n    {\n      \"ville\": \"Settat\",\n      \"heurePassage\": \"2026-12-15T19:15:00\",\n      \"prixDepuisDepart\": 70\n    },\n    {\n      \"ville\": \"Marrakech\",\n      \"heurePassage\": \"2026-12-15T21:30:00\",\n      \"prixDepuisDepart\": 120\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/trajets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets"
+              ]
+            },
+            "description": "201. Remplacer vehiculeId. NOTER id trajet + les quatre IDs dans points de la réponse. Ils ne sont pas forcément 1,2,3,4."
+          },
+          "response": []
+        },
+        {
+          "name": "get trajet by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1"
+              ]
+            },
+            "description": "200. Voir points, statut et placesRestantes."
+          },
+          "response": []
+        },
+        {
+          "name": "search Casablanca Marrakech",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets?montee=Casablanca&descente=Marrakech&date=2026-12-15&places=1&prixMax=90&page=0&taille=5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets"
+              ],
+              "query": [
+                {
+                  "key": "montee",
+                  "value": "Casablanca"
+                },
+                {
+                  "key": "descente",
+                  "value": "Marrakech"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-12-15"
+                },
+                {
+                  "key": "places",
+                  "value": "1"
+                },
+                {
+                  "key": "prixMax",
+                  "value": "90"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "taille",
+                  "value": "5"
+                }
+              ]
+            },
+            "description": "200. Prix unitaire attendu 80. Rechercher avant de remplir/annuler le trajet."
+          },
+          "response": []
+        },
+        {
+          "name": "pagination page 0",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets?montee=Rabat&descente=Marrakech&date=2026-12-15&page=0&taille=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets"
+              ],
+              "query": [
+                {
+                  "key": "montee",
+                  "value": "Rabat"
+                },
+                {
+                  "key": "descente",
+                  "value": "Marrakech"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-12-15"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "taille",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "200. Pour voir hasNext=true, publier un second trajet avec mêmes villes et même date."
+          },
+          "response": []
+        },
+        {
+          "name": "pagination page 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets?montee=Rabat&descente=Marrakech&date=2026-12-15&page=1&taille=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets"
+              ],
+              "query": [
+                {
+                  "key": "montee",
+                  "value": "Rabat"
+                },
+                {
+                  "key": "descente",
+                  "value": "Marrakech"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-12-15"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "taille",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "200. Avec une seule correspondance cette page est vide. Le paramètre est taille."
+          },
+          "response": []
+        },
+        {
+          "name": "search sens inverse",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets?montee=Marrakech&descente=Casablanca&date=2026-12-15",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets"
+              ],
+              "query": [
+                {
+                  "key": "montee",
+                  "value": "Marrakech"
+                },
+                {
+                  "key": "descente",
+                  "value": "Casablanca"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-12-15"
+                }
+              ]
+            },
+            "description": "200. Notre trajet ne doit pas figurer dans content."
+          },
+          "response": []
+        },
+        {
+          "name": "terminer trajet — avant départ",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1/terminer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1",
+                "terminer"
+              ]
+            },
+            "description": "409 avant départ. 204 seulement après départ pour un trajet encore modifiable."
+          },
+          "response": []
+        },
+        {
+          "name": "annuler trajet — fin de démonstration",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1/annuler",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1",
+                "annuler"
+              ]
+            },
+            "description": "204. Faire après les réservations. Puis GET trajet et GET réservations pour vérifier les états ANNULE/ANNULEE."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reservation",
+      "item": [
+        {
+          "name": "create reservation Salma — 50 DH",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Passager-Id",
+                "value": "1",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"trajetId\": 1,\n  \"pointMonteeId\": 3,\n  \"pointDescenteId\": 4,\n  \"nombrePlaces\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/reservations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "reservations"
+              ]
+            },
+            "description": "201. Remplacer les IDs : montée Settat, descente Marrakech. 50 DH, reste 2 places. Noter reservation.id."
+          },
+          "response": []
+        },
+        {
+          "name": "get reservations passager",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Passager-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/reservations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "reservations"
+              ]
+            },
+            "description": "200. Historique de Salma."
+          },
+          "response": []
+        },
+        {
+          "name": "get reservations du trajet",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Conducteur-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1/reservations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1",
+                "reservations"
+              ]
+            },
+            "description": "200. Le conducteur consulte les réservations de sa propre route."
+          },
+          "response": []
+        },
+        {
+          "name": "create reservation Karim — 160 DH",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Passager-Id",
+                "value": "2",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"trajetId\": 1,\n  \"pointMonteeId\": 2,\n  \"pointDescenteId\": 4,\n  \"nombrePlaces\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/reservations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "reservations"
+              ]
+            },
+            "description": "201. Remplacer header par ID Karim, montée Casablanca, descente Marrakech. 160 DH, reste 0, COMPLET. Noter reservation.id Karim."
+          },
+          "response": []
+        },
+        {
+          "name": "get trajet complet",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1"
+              ]
+            },
+            "description": "200. COMPLET, placesRestantes=0 après les deux bookings."
+          },
+          "response": []
+        },
+        {
+          "name": "annuler reservation Karim",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Passager-Id",
+                "value": "2",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1/reservations/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1",
+                "reservations",
+                "2"
+              ]
+            },
+            "description": "204 si au moins 24h avant départ. Remplacer trajetId, ID réservation Karim et header Karim."
+          },
+          "response": []
+        },
+        {
+          "name": "get trajet après annulation",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/trajets/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "trajets",
+                "1"
+              ]
+            },
+            "description": "200. PUBLIE, placesRestantes=2 après annulation de Karim."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
